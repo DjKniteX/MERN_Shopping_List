@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink, } from 'reactstrap';
+  NavLink, Container} from 'reactstrap';
 
 class AppNavBar extends React.Component {
   constructor(props) {
@@ -25,19 +25,18 @@ class AppNavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
+        <Navbar color="dark" dark expand="sm" className="mb-5">
+          <Container>
+              <NavbarBrand href="/">Shopping List</NavbarBrand>
+              <NavbarToggler onClick={this.toggle} />
+              <Collapse isOpen={this.state.isOpen} navbar>
+                <Nav className="ml-auto">
+                  <NavItem>
+                    <NavLink href="https://github.com/djknitex">Github</NavLink>
+                  </NavItem>
+                </Nav>
+              </Collapse>
+          </Container>
         </Navbar>
       </div>
     );
